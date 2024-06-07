@@ -1,0 +1,40 @@
+<title>Usuarios</title>
+{% extends "estrutura.html" %}
+
+{% block conteudo %}
+
+    <h2 class="text-center">{{ desc }}</h2>
+
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <!-- <th>Senha</th> -->
+                <th></th>
+                <th></th>
+             
+            
+            <!--{ %  % }--> 
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for usuarios in cadas %}
+                <tr>
+                    <td>{{ usuarios.nome_usuario }}</td>
+                    <td>{{ usuarios.email_usuario }}</td>
+                    <!-- <td>{{ usuarios.senha_usuario }} </td> -->
+               
+                    
+                    <td><a href="{{ url_for('excluir_user',idU=usuarios.id_usuario)}}">Excluir</a></td>
+                    <td><a href="{{ url_for('editar_user',idU=usuarios.id_usuario)}}">Editar</a></td>
+                </tr>
+        
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
+
+    

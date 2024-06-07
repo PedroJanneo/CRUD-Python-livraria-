@@ -1,0 +1,46 @@
+<title>Lista livro</title>
+{% extends "estrutura.html" %}
+
+{% block conteudo %}
+
+    <h2 class="text-center">{{ descricao }}</h2>
+
+    <table class="table table-hover">
+        <thead class="table-dark">
+            <tr>
+                <th>Titulo</th>
+                <th>Editora</th>
+                <th>Autor</th>
+                <th>Preço R$</th>
+                <th>Avaliações</th>
+                <th>Ação</th>
+                <th></th>
+                <th></th>
+            
+            <!--{ %  % }--> 
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for livros in lista_liv %}
+                <tr>
+                    <td>{{ livros.titulo_livro }}</td>
+                    <td>{{ livros.editora_livro }} </td>
+                    <td> {{ livros.autor_livro }}</td>
+                    <td>{{ livros.preco_livro }}</td>
+                    <td> {{ livros.avaliacao }}</td>
+                    <!-- link abaixo chama a tela passando o id do produto atualiado-->
+                    <td><a href="{{ url_for('editar_livros',idL= livros.id_livro)}}">Editar</a></td>
+
+                    <td><a href="{{ url_for('excluir_livros',idL=livros.id_livro)}}">Excluir</a></td>
+
+                    <td><a href="{{ url_for('avaliar_livros',idL=livros.id_livro)}}">Avaliar</a></td>
+                </tr>
+        
+            {% endfor %}
+        </tbody>
+    </table>
+    
+{% endblock %}
+
+    

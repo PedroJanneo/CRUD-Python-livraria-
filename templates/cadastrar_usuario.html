@@ -1,0 +1,44 @@
+<title>Cadastrar usuario</title>
+{% extends "estrutura.html" %}
+
+{% block conteudo %}
+
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+     
+      <form class="text-center" action="/cadastro" method="POST"> 
+
+          <h1 class="h3 mb-3 fw-normal">Cadastrar usuario</h1>
+  
+          <div style="max-width: 320px;">
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="nome_usuario" name="txtNome" placeholder="João Paulo">
+                  <label for="nome_usuario">Login</label>
+              </div>
+              <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="email_usuario" name="txtEmail" placeholder="name@example.com">
+                  <label for="email_usuario">Email</label>
+              </div>
+              <div class="form-floating mb-3">
+                  <input type="password" class="form-control" id="senha_usuario" name="txtSenha" placeholder="Password">
+                  <label for="senha_usuario">Password</label>
+              </div>
+  
+              <button class="btn btn-primary w-100 py-2" type="submit">Cadastrar</button>
+          </div>
+  
+          <p class="mt-5 mb-3 text-center text-body-secondary">&copy; 2024</p>
+      </form>
+  </div>
+  
+  
+    
+    
+    
+</main>
+<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+{% endblock %}
+
+

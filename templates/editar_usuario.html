@@ -1,0 +1,37 @@
+<title>Editar usuario</title>
+{% extends "estrutura.html" %}
+
+{% block conteudo %}
+
+    <form method="post" action="/atualiza">
+
+        <input type="hidden" name="txtId_usu" value="{{ usuarios.id_usuario }}"></input>
+            <!-- input a cima é o Id do produto-->
+
+        <div class="mb-3">
+            <label class="form-label">Nome usuario</label>
+            <input class="form-control" type="text" name="txtNome"
+             value="{{ usuarios.nome_usuario }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email usuario</label>
+            <input class="form-control" type="email" name="txtEmail"
+           value="{{ usuarios.email_usuario }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Senha do usuario</label>
+            <input class="form-control" type="password" name="txtSenha"
+            value="{{ usuarios.senha_usuario }}"> 
+        </div>
+
+       
+
+        <div class="mb-3">
+            <button class="btn btn-dark" type="submit">Atualizar cadastro</button>
+        </div>
+    </form>
+
+{% endblock %}
+

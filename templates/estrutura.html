@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <ul id="messages" class="list-unstyled">
+        {% for category, message in messages %}
+          {% if category == 'erro' %}
+            <li class="alert alert-danger">{{ message }}</li>
+          {% elif category == 'success' %}
+            <li class="alert alert-success">{{ message }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+      <script>
+        // Função para remover as mensagens de flash após 5 segundos
+        setTimeout(function() {
+          var messages = document.getElementById('messages');
+          messages.innerHTML = '';
+        }, 3000); // 5000 milissegundos = 5 segundos
+      </script>
+    {% endif %}
+  {% endwith %}
+
+    <link rel="stylesheet" href="../static/bootstrap.css" />
+  </head>
+  <body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+        <ul class="nav justify-content-end">
+          <li class="nav-item">
+            <a class="nav-link text-light mx-3" href="/cadastrar"
+              >Cadastrar livro</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light mx-3" href="/lista"
+              >Lista de livros</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light mx-3" href="/cadastrar_usuario"
+              >Cadastrar Usuarios</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light mx-3" href="/lista_cadastrados"
+              >Lista de Usuarios</a
+            >
+          </li>
+        </ul>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                  {% if usuario_logado %}
+                  <a class="nav-link dropdown-toggle text-light px-5" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      {{ usuario_logado() }}
+                  </a>
+                  <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item bg-dark text-light" href="/login">Sair</a>
+                  </div>
+                  {% endif %}
+              </li>
+          </ul>
+      </div>
+      
+       
+        
+     
+    </nav>
+
+    <div class="container">
+      <br /><br /><br />
+
+      {% block conteudo %} {% endblock %}
+    </div>
+    
+  </body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

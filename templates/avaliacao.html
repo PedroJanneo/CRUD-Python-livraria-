@@ -1,0 +1,53 @@
+<title>Avaliar</title>
+{% extends "estrutura.html" %}
+
+{% block conteudo %}
+
+    <form method="post" action="/avaliar_livros/{{ livros.id_livro }}">
+
+        <input type="hidden" name="txtId_liv" value="{{ livros.id_livro }}"></input>
+            <!-- input a cima é o Id do produto-->
+
+        <div class="mb-3">
+            <label class="form-label">Titulo</label>
+            <input class="form-control" type="text" name="txtTitulo"
+            placeholder="Digite o titulo" value="{{ livros.titulo_livro }}" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Editora livro</label>
+            <input class="form-control" type="text" name="txtEditora"
+            placeholder="Digite a editora" value="{{ livros.editora_livro }}" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Autor do livro</label>
+            <input class="form-control" type="text" name="txtAutor" 
+            placeholder="Digite o preço do livro" value="{{ livros.autor_livro }}" disabled> 
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Preço do livro</label>
+            <input class="form-control" type="text" name="txtPreco"
+            placeholder="Digite o preço do livro" value="{{ livros.preco_livro }}" disabled>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Avaliação</label> <br>
+            <input type="radio" id="star{{ livros.id_livro }}5" name="txtAvaliacao_{{ livros.id_livro }}" value="5"><label for="star{{ livros.id_livro }}5">5</label>
+            <input type="radio" id="star{{ livros.id_livro }}4" name="txtAvaliacao_{{ livros.id_livro }}" value="4"><label for="star{{ livros.id_livro }}4">4</label>
+            <input type="radio" id="star{{ livros.id_livro }}3" name="txtAvaliacao_{{ livros.id_livro }}" value="3"><label for="star{{ livros.id_livro }}3">3</label>
+            <input type="radio" id="star{{ livros.id_livro }}2" name="txtAvaliacao_{{ livros.id_livro }}" value="2"><label for="star{{ livros.id_livro }}2">2</label>
+            <input type="radio" id="star{{ livros.id_livro }}1" name="txtAvaliacao_{{ livros.id_livro }}" value="1"><label for="star{{ livros.id_livro }}1">1</label>
+        </div>
+        
+
+        <div class="mb-3">
+            <button class="btn btn-dark" type="submit">Editar Livro</button>
+        </div>
+    </form>
+
+{% endblock %}
+
+
+    

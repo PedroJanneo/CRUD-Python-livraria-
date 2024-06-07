@@ -1,0 +1,43 @@
+<title>Editar Livro</title>
+{% extends "estrutura.html" %}
+
+{% block conteudo %}
+
+    <form method="post" action="/atualizar">
+
+        <input type="hidden" name="txtId_liv" value="{{ livros.id_livro }}"></input>
+            <!-- input a cima é o Id do produto-->
+
+        <div class="mb-3">
+            <label class="form-label">Titulo</label>
+            <input class="form-control" type="text" name="txtTitulo"
+            placeholder="Digite o titulo" value="{{ livros.titulo_livro }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Editora livro</label>
+            <input class="form-control" type="text" name="txtEditora"
+            placeholder="Digite a editora" value="{{ livros.editora_livro }}">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Autor do livro</label>
+            <input class="form-control" type="text" name="txtAutor"
+            placeholder="Digite o preço do livro" value="{{ livros.autor_livro }}"> 
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Preço do livro</label>
+            <input class="form-control" type="text" name="txtPreco"
+            placeholder="Digite o preço do livro" value="{{ livros.preco_livro }}">
+        </div>
+
+      
+
+        <div class="mb-3">
+            <button class="btn btn-dark" type="submit">Editar Livro</button>
+        </div>
+    </form>
+
+{% endblock %}
+
