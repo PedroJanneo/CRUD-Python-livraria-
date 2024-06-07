@@ -12,7 +12,12 @@ Para o banco de dados eu usei o mysql workbench (o banco estara disponibilizado 
 
 - Livros : seguindo o padrão do crud, podera cadastrar ( com titulo, autor, editora e preço), excluir e editar, coloquei uma opção onde há um sistema de avaliação.
 
-#Tecnologias usadas:
+# Futuros updates:
+- Pretendo colocar um sistema de niveis de permissao, onde so quem tem o cadastro ADM possa cadastar livros e usuarios (podendo editar e excluir livremente), e quem for USUARIO, so ver a lista de livros e conseguir avaliar (somente).
+
+- Sistema de paginas lidas (ex: 12/300)
+
+# Tecnologias usadas:
 
 - ``Python``
 - ``Flask``
